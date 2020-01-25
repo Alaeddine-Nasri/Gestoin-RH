@@ -16,10 +16,7 @@ import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <SearchBar/>
-    </View>
-    /*
+    
     <View style={styles.container}>
       <ScrollView
         style={styles.container}
@@ -71,7 +68,7 @@ export default function HomeScreen() {
           </MonoText>
         </View>
       </View>
-    </View>*/
+    </View>
   );
 }
 

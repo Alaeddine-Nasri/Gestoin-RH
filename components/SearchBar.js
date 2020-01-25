@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {StyleSheet, View, TextInput, Image, Dimensions, Text, ScrollView, TouchableOpacity} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 import { SearchBar } from 'react-native-elements';
+import Modal from 'react-native-modalbox';
 
 const DEVICE_WIDTH = Dimensions.get("window").width;
 const DEVICE_HEIGHT = Dimensions.get("window").height;
@@ -10,14 +11,47 @@ const DEVICE_HEIGHT = Dimensions.get("window").height;
 export default class UserInput extends Component {
     state = {
         search: '',
+        isTopOpen: true,
         };
 
         updateSearch = search => {
         this.setState({ search });
         };
-  render() {
+
+    renderButtons(){
+        let children = [];
+        
+        for (let i = 0 ; i < this.props.data.length; i+=2){
+            children.push(
+                <View style={styles.containerButton}>
+                        <TouchableOpacity style={styles.button}>
+                            <Text>{this.props.data[i]}</Text>
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity style={styles.button}>
+                            <Text>{this.props.data[i+1]}</Text>
+                        </TouchableOpacity>
+                </View >
+            )
+        }
+        return children.map(value => // parcourir toutes les lignes insérées
+            value // represnete une ligne
+        )
+    }   
+
+    render() {
     const { search } = this.state;
         return (
+            <Modal style={{backgroundColor: '#00000000', flexDirection: 'column'}}
+                    ref={"modalTop"}
+                    swipeToClose={this.state.swipeToClose}
+                    entry='top'
+                    position='center'
+                    startOpen= {this.state.isTopOpen}
+                    backdropOpacity= {0}
+                    onOpened={() => {this.setState({isTopOpen: true})}}
+                    onClosed={() => {this.setState({isTopOpen: false})}}
+                    >
             <View style={{alignItems: "center"}}>
                 <View style={{width: "100%"}}>
                     <SearchBar
@@ -33,91 +67,39 @@ export default class UserInput extends Component {
                 </View>
                 
 
-                <ScrollView horizontal>
+                <ScrollView horizontal  style={{paddingTop: 20, backgroundColor:"#fff"}}>
                     <View style={styles.containerButton}>
                         <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
+                            <Text>Etudiant</Text>
                         </TouchableOpacity>
                         
                         <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
+                            <Text>Freelanceur</Text>
                         </TouchableOpacity>
                         
                     </View >
                         
                     <View style={styles.containerButton}>
                         <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
+                            <Text>Développeur</Text>
                         </TouchableOpacity>
                         
                         <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
+                            <Text>Employé</Text>
                         </TouchableOpacity>
                         
                     </View >
                     <View style={styles.containerButton}>
                         <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
+                            <Text>Designer</Text>
                         </TouchableOpacity>
                         
                         <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
+                            <Text>Developpeur</Text>
                         </TouchableOpacity>
                         
                     </View >
                         
-                    <View style={styles.containerButton}>
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                    </View >
-                    <View style={styles.containerButton}>
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                    </View >
-                        
-                    <View style={styles.containerButton}>
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                    </View >
-                    <View style={styles.containerButton}>
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                    </View >
-                        
-                    <View style={styles.containerButton}>
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={styles.button}>
-                            <Text>Test</Text>
-                        </TouchableOpacity>
-                        
-                    </View >
                 </ScrollView>
                 
                 <Svg
@@ -138,12 +120,13 @@ export default class UserInput extends Component {
                     Z"/>
                 </Svg>
 
-                <View style={styles.closeButton}>
-
-                </View>
+                <TouchableOpacity style={styles.closeButton} onPress={()=> this.refs.modalTop.close()}>
+                    <Text style={{fontSize: 25, color: "#00000080"}}>X</Text>
+                </TouchableOpacity>
                 
 
             </View>
+            </Modal>
         );
   }
 }
@@ -154,6 +137,7 @@ const styles = StyleSheet.create({
         borderBottomColor: 'transparent',
         borderTopColor: 'transparent',
         
+        
     },
     inputContainerStyle: {
         borderRadius: 25,
@@ -161,18 +145,35 @@ const styles = StyleSheet.create({
     },
     containerButton:{
         flexDirection: 'column',
-        marginLeft: 50
+        
+        backgroundColor: "#fff"
     },
     button: {
         alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        padding: 10
+        backgroundColor: '#fff',
+        padding: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 5,
+        },
+        marginLeft: 25,
+        marginRight: 25,
+        shadowOpacity: 0.34,
+        shadowRadius: 6.27,
+        elevation: 10,
+        borderRadius: 15,
+        width: 100,
+        marginBottom: 20,
+        marginTop: 5
     },
     closeButton: {
         backgroundColor: '#fff',
         width: 50,
         height: 50,
         borderRadius: 25,
-        borderWidth: 2,
+        borderWidth: 0,
+        justifyContent: "center",
+        alignItems: "center"
     }
 })
