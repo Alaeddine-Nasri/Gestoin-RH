@@ -10,25 +10,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import SearchBar from "../components/SearchBar"
 import { MonoText } from '../components/StyledText';
 import ProfileCard from './ProfileCard';
-
-const styles = StyleSheet.create({
-  container: {
-    borderWidth: 1,
-    borderColor: '#d6d7da',
-    borderRadius: 10,
-    flex: 3
-  },
-  rowContainer: {
-    flexDirection: 'row',
-    padding: 20
-  },
-  participantInfo: {
-    color: 'gray'
-  }
-});
-
 
 export default function HomeScreen() {
   return (
