@@ -1,4 +1,3 @@
-import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import {
   Image,
@@ -10,17 +9,22 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import SearchBar from '../components/SearchBar';
 
 
 import ProfileCard from '../components/profileCard/ProfileCard';
 
 export default function HomeScreen() {
   return (
-    <ScrollView>
-      <ProfileCard/>
-      <ProfileCard/>
-      <ProfileCard/>
-    </ScrollView>
+    <View>
+      <SearchBar/>
+      <ScrollView>
+        <ProfileCard/>
+        <ProfileCard/>
+        <ProfileCard/>
+      </ScrollView>
+    </View>
+    
   );
 }
 

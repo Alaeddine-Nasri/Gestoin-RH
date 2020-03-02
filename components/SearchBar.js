@@ -4,6 +4,7 @@ import {StyleSheet, View, TextInput, Image, Dimensions, Text, ScrollView, Toucha
 import Svg, {Path} from 'react-native-svg';
 import { SearchBar } from 'react-native-elements';
 import Modal from 'react-native-modalbox';
+import { BlurView } from 'expo-blur';
 
 const DEVICE_WIDTH = Dimensions.get("window").width;
 const DEVICE_HEIGHT = Dimensions.get("window").height;
@@ -110,10 +111,10 @@ export default class UserInput extends Component {
                 </ImageBackground>
                 </View>
                 <TouchableOpacity style={styles.closeButton} onPress={()=> this.refs.modalTop.close()}>
-
                     <Text style={{fontSize: 35, color: "#00000080"}}>×</Text>
                 </TouchableOpacity>
             </Modal>
+            
         );
   }
 }
@@ -123,8 +124,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderBottomColor: 'transparent',
         borderTopColor: 'transparent',
-        
-        
     },
     inputContainerStyle: {
         borderRadius: 25,
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff"
     },
     backStyle:{
-        width: undefined,  
+        width: undefined,
         height: undefined,
         alignItems: "center"
     },
