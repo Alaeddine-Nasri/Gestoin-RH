@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {StyleSheet, View, TextInput, Image, Dimensions, Text, ScrollView, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, TextInput, Image, Dimensions, Text, ScrollView, TouchableOpacity, ImageBackground} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 import { SearchBar } from 'react-native-elements';
 import Modal from 'react-native-modalbox';
@@ -52,7 +52,8 @@ export default class UserInput extends Component {
                     onOpened={() => {this.setState({isTopOpen: true})}}
                     onClosed={() => {this.setState({isTopOpen: false})}}
                     >
-            <View style={{alignItems: "center"}}>
+            <View style={{backgroundColor: '#00000000'}}>
+            <ImageBackground source={require("../assets/images/SearchBarBackground.png")} style={styles.backStyle}>
                 <View style={{width: "100%"}}>
                     <SearchBar
                         placeholder="Search"
@@ -67,7 +68,7 @@ export default class UserInput extends Component {
                 </View>
                 
 
-                <ScrollView horizontal  style={{paddingTop: 20, backgroundColor:"#fff"}}>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{paddingTop: 20, backgroundColor:"#fff"}}>
                     <View style={styles.containerButton}>
                         <TouchableOpacity style={styles.button}>
                             <Text>Etudiant</Text>
@@ -101,31 +102,17 @@ export default class UserInput extends Component {
                     </View >
                         
                 </ScrollView>
-                
-                <Svg
-                width={DEVICE_WIDTH}
-                height={80}
-                fill="white"
-                stroke="black"
-                viewBox="0 180 1440 80"
-                >
-                    <Path d="M.5.5
-                    h1440
-                    V746.14a1115.78,1115.78,0,0,0-136.32,0
-                    c-104.36,6.41-170.56,25.4-279.44,49.58
-                    C872.59,829.52,843,842.18,766.61,845.31
-                    c-52.25,2.14-94.28-1.11-127.89-3.82-46.37-3.73-89.62-9.71-232.08-39.09
-                    C244.75,769,220.39,760.18,150.88,753.77
-                    A1131.54,1131.54,0,0,0,.5,750
-                    Z"/>
-                </Svg>
-
-                <TouchableOpacity style={styles.closeButton} onPress={()=> this.refs.modalTop.close()}>
-                    <Text style={{fontSize: 10, color: "#00000080"}}>X</Text>
+               
+                <TouchableOpacity style={styles.openButton} onPress={()=> this.refs.modalTop.close()}>
+                    <Text style={{fontSize: 30, color: "#00000060"}}>...</Text>
                 </TouchableOpacity>
-                
 
-            </View>
+                </ImageBackground>
+                </View>
+                <TouchableOpacity style={styles.closeButton} onPress={()=> this.refs.modalTop.close()}>
+
+                    <Text style={{fontSize: 35, color: "#00000080"}}>×</Text>
+                </TouchableOpacity>
             </Modal>
         );
   }
@@ -148,22 +135,28 @@ const styles = StyleSheet.create({
         
         backgroundColor: "#fff"
     },
+    backStyle:{
+        width: undefined,  
+        height: undefined,
+        alignItems: "center"
+    },
     button: {
         alignItems: 'center',
         backgroundColor: '#fff',
         padding: 10,
+        paddingHorizontal: 10,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
             height: 5,
         },
-        marginLeft: 25,
-        marginRight: 25,
+        marginLeft: 10,
+        marginRight: 10,
         shadowOpacity: 0.34,
         shadowRadius: 6.27,
         elevation: 10,
         borderRadius: 15,
-        width: 100,
+        width: 130,
         marginBottom: 20,
         marginTop: 5
     },
@@ -174,6 +167,8 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         borderWidth: 0,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        alignSelf: "center",
+        marginTop: 10,
     }
 })
