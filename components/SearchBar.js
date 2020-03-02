@@ -121,7 +121,7 @@ export default class UserInput extends Component {
                 </Svg>
 
                 <TouchableOpacity style={styles.closeButton} onPress={()=> this.refs.modalTop.close()}>
-                    <Text style={{fontSize: 25, color: "#00000080"}}>X</Text>
+                    <Text style={{fontSize: 10, color: "#00000080"}}>X</Text>
                 </TouchableOpacity>
                 
 
@@ -169,8 +169,8 @@ const styles = StyleSheet.create({
     },
     closeButton: {
         backgroundColor: '#fff',
-        width: 50,
-        height: 50,
+        width: 25,
+        height: 25,
         borderRadius: 25,
         borderWidth: 0,
         justifyContent: "center",
