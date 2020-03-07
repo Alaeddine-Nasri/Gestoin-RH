@@ -69,18 +69,18 @@ export default class ProfileCard extends Component {
                     <View style={{width : 270, height : 2 ,marginTop : 250,marginLeft: -10, backgroundColor: 'black'}}>
                         </View>
                     <View style={styles.boxadd}>
-                    <View style={{width: 14,height: 14,position:'absolute',borderRadius: 10,marginTop : 12,marginLeft:12, backgroundColor: '#02A5DC',}}>
+                    <View style={{width: 14,height: 14,position:'absolute',borderRadius: 10,marginTop : 12,marginLeft:12, backgroundColor: 'orange',}}>
                          
                         </View>
-                        <Text style={{ textAlign: 'right', marginTop: 7, right : 12, color: 'black', fontSize: 17, }}>Add Newbies</Text>
+                        <Text style={{ textAlign: 'right', marginTop: 7, right : 12, color: 'black', fontSize: 17, }}>Homme</Text>
                     </View>
 
 
                     <View style={styles.boxadd2}>
-                        <View style={{width: 14,height: 14,position:'absolute',borderRadius: 10,marginTop : 12,marginLeft:12, backgroundColor: '#EBDE12',}}>
+                        <View style={{width: 14,height: 14,position:'absolute',borderRadius: 10,marginTop : 12,marginLeft:12, backgroundColor: '#F03737',}}>
                          
                         </View>
-                        <Text style={{ textAlign: 'right', marginTop: 7, right : 12, color: 'black', fontSize: 17, }}>Filttre</Text>
+                        <Text style={{ textAlign: 'right', marginTop: 7, right : 12, color: 'black', fontSize: 17, }}>Femme</Text>
                     </View>
 
                 </View>

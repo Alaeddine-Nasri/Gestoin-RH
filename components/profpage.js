@@ -96,32 +96,39 @@ export default class ProfPage extends Component {
         <View style={styles.body}>
 
           <View style={styles.boxadd}>
-            <Text style={{ textAlign: 'left', marginTop: 10, left: 10, color: 'white', fontSize: 17, }}>Add Newbies</Text>
+            <Text style={{ textAlign: 'left', marginTop: 6, left: 10, color: 'white', fontSize: 24,fontWeight :'bold' }}>NASRI Ala Eddine</Text>
+            <Text style={{ textAlign: 'left', marginTop: 2, left: 10, color: 'white', fontSize: 18, }}>Etudiant en 2CP</Text>
           </View>
           
           <View style={styles.line}></View>
           <View style={styles.num}></View>
-
-          <View style={styles.boxx}>
-            <CheckBox
-              style={styles.checkb}
-              containerStyle={{ backgroundColor: '#F5F6F9', borderColor: '#F5F6F9', marginLeft: 0 }}
-              title='Name'
-              checked={this.state.checked}
-              onPress={() => this.setState({ checked: !this.state.checked })}
-            />
-            {/* <View style={{width:  10, height : 10,backgroundColor:'red',position:'absolute',marginTop : 22,right:65}}></View> */}
-            <Text style={{ position: 'absolute', marginTop: 18, right: 30, }}>Status</Text>
-
+          <View style={styles.num}></View>
+          <View style={styles.num}></View>
+          <View style={styles.num}></View>
+          <View style={styles.textss}>
+          <Text style={styles.infor}>ia_nasri@esi.dz</Text>
+          <Text style={styles.infor}>0698367901</Text>
+          <Text style={styles.infor}>Batna, Algeria</Text>
+          <Text style={styles.infor}>03/05/2000</Text>
           </View>
+          <View style={styles.line}></View>
+          <View style={styles.box1}>
+            <Text style={{ textAlign: 'center', marginTop: 7, color: 'white', fontSize: 17, }}>Java</Text>
+          </View>
+          <View style={styles.box2}>
+            <Text style={{ textAlign: 'center', marginTop: 7, color: 'white', fontSize: 17, }}>C#</Text>
+          </View>
+          <View style={styles.box3}>
+            <Text style={{ textAlign: 'center', marginTop: 7, color: 'white', fontSize: 17, }}>React</Text>
+          </View>
+          
 
+          <View style={styles.line}></View>
 
-
-
-
-
-         
-
+          <View style={styles.field}>
+            <Text style={{fontSize: 30, fontWeight : 'bold',color:'#4A70AD'}}>Motivation To join CSE</Text>
+            <Text style={{lineHeight: 20,}}>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son</Text>
+          </View> 
 
         </View>
       </ScrollView>
@@ -143,19 +150,36 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
 
   },
+  field: {
+    width : '86%'
+
+  },
   line:{
     width : '100%',
     height : 2,
     backgroundColor : '#A6A6A6',
-    marginBottom : -10,
+    marginBottom : -20,
+    margintop : -70,
   },
   
+  textss:{
+    marginBottom :0,
+    marginTop :-91,
+    marginLeft : -160,
+  },
   num:{
     width : 12,
     height : 12,
     backgroundColor : '#A6A6A6',
     alignSelf : 'flex-start',
     marginLeft : 25,
+    marginBottom : 10
+
+  },
+  infor:{
+    color : '#A6A6A6',
+    marginBottom : 5
+
 
   },
 
@@ -206,21 +230,43 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: '95%',
     borderRadius: 4,
-    height: 80,
+    height: 65,
     color: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#F3F3F3',
   },
-  boxadd2: {
+  box1: {
     marginTop: 10,
-    backgroundColor: '#FFFFFF',
-    alignSelf: 'flex-end',
-    marginTop : -40,
-    marginLeft: 28,
-    width: 120,
-    left: -30,
+    backgroundColor: '#02A5DC',
+    alignSelf: 'flex-start',
+    left : 20,
+    width: '27.33%',
     borderRadius: 4,
     height: 40,
+    color: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#F3F3F3',
+  },
+  box2: {
+    marginTop: -40,
+    backgroundColor: '#02A5DC',
+    alignSelf: 'center',
+    width: '27.33%',
+    borderRadius: 4,
+    height: 40,
+    color: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#F3F3F3',
+  },
+  box3: {
+    marginTop: -40,
+    backgroundColor: '#02A5DC',
+    alignSelf: 'flex-end',
+    right : 20,
+    width: '27.33%',
+    borderRadius: 4,
+    height: 40,
+    color: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#F3F3F3',
   },
