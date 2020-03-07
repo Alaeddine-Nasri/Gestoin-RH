@@ -33,7 +33,13 @@ class Sidebar extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View>
         <Image style={styles.cse} source={require('../assets/images/CSE.png')} />
+        </View>
+        <View style={styles.compos}>
+          <Text style={styles.texts}>Home</Text>
+          <Image style={styles.icons} source={require('../assets/Icons/home.png')}/>
+        </View>
       </View>
     );
   }
@@ -43,6 +49,24 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     backgroundColor : '#131E30',
     flex: 3
+  },
+  compos: {
+    marginTop : 20,
+    //alignContent : 'center',
+    //alignItems : "center",
+    alignSelf : "center",
+    width : '70%',
+  },
+  icons:{
+    marginTop : -30,
+    width : 25,
+    height : 25
+  },
+  texts:{
+    alignSelf : 'flex-end',
+    color : 'white',
+    marginRight : 30,
+    fontSize : 20,
   },
   rowContainer: {
     flexDirection: 'row',
@@ -56,6 +80,7 @@ const styles = StyleSheet.create({
     marginLeft : 40,
     height : 71,
     width : 188,
+    marginBottom : 50
   }
 });
 
