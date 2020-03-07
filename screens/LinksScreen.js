@@ -14,6 +14,8 @@ export default function LinksScreen() {
 }
 
 LinksScreen.navigationOptions = {
+  header : null,
+  headerMode : 'none',
   title: 'Links',
 };
 

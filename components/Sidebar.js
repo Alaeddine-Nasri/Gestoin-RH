@@ -1,9 +1,7 @@
-
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import Profil from '../components/Profil';
 
-class SettingsScreen extends Component {
+class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,9 +10,11 @@ class SettingsScreen extends Component {
 
   render() {
     return (
-      <Profil navigation={this.props.navigation} />
+      <View style={{flex :1}}>
+        <Text> Sidebar </Text>
+      </View>
     );
   }
 }
 
-export default SettingsScreen;
+export default Sidebar;

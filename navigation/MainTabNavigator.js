@@ -1,15 +1,17 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+// import { createStackNavigator } from 'react-navigation-stack';
+// import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import TabBarIcon from '../components/TabBarIcon';
+import Sidebar from '../components/Sidebar';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-
+// import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from "react-navigation";
 const config = Platform.select({
-  web: { headerMode: 'screen' },
+  web: { headerMode: 'none' },
   default: {},
 });
 
@@ -17,7 +19,9 @@ const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
   },
-  config
+  {
+    headerMode: 'none',
+  }
 );
 
 HomeStack.navigationOptions = {
@@ -56,7 +60,9 @@ const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
   },
-  config
+  {
+    headerMode: 'none',
+  }
 );
 
 SettingsStack.navigationOptions = {
@@ -72,8 +78,18 @@ const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
-});
+},
+{
+    contentComponent: () => <Sidebar />
+  });
+
+const AppStack = createDrawerNavigator({
+  App: tabNavigator,
+}, {
+  contentComponent: () => <Sidebar />
+}
+)
 
 tabNavigator.path = '';
 
-export default tabNavigator;
+export default AppStack;
