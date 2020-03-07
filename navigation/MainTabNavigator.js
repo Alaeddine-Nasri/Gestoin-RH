@@ -7,7 +7,9 @@ import TabBarIcon from '../components/TabBarIcon';
 import Sidebar from '../components/Sidebar';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
+import ProfileDetails from '../screens/ProfileDetails';
 import SettingsScreen from '../screens/SettingsScreen';
+
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createDrawerNavigator, createStackNavigator, createBottomTabNavigator, createSwitchNavigator } from "react-navigation";
 const config = Platform.select({
@@ -59,9 +61,11 @@ LinksStack.path = '';
 const SettingsStack = createStackNavigator(
   {
     Settings: SettingsScreen,
+    ProfileDetails : ProfileDetails
   },
   {
     headerMode: 'none',
+    initialRouteName : 'Settings'
   }
 );
 

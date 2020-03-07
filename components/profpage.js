@@ -24,7 +24,7 @@ import { CheckBox } from 'react-native-elements';
 
 let ScreenHeight = Dimensions.get("window").height;
 
-export default class Profile extends Component {
+export default class ProfPage extends Component {
 
   constructor(props) {
     super(props);
@@ -93,65 +93,14 @@ export default class Profile extends Component {
           <Image style={styles.menuicon} source={require('../assets/Icons/menu.png')} />
         </TouchableOpacity>
         </View>
-
-
-
-
-
-        {/* <View style={styles.star} >
-          <TouchableOpacity onPress={this.buttonClickListener} style={{width: 24,
-            height: 24,
-            alignSelf: 'flex-end',
-            position: 'absolute',
-            marginTop: 140,
-      //      opacity : 0,
-            }}>    
-            {
-              (this.state.starbool)? (
-                <Image 
-                    source ={require('../assets/images/star3.png')}
-                    
-                    style = {styles.stars} /> 
-              )
-              :
-              
-              <Image 
-                source ={require('../assets/images/star.png')}
-                
-                style = {styles.stars} /> 
-              
-            }
-        </TouchableOpacity>
-        
-        </View> */}
-
         <View style={styles.body}>
-          <View style={styles.bodyContent}>
-            <Text style={styles.intro}> Newbies </Text>
-            <View>
-              <TextInput placeholder="Type here to translate!" style={styles.rechinput} />
-              <Image style={styles.research} source={require('../assets/Icons/research.png')} />
-            </View>
-          </View>
-          {/* <View style={styles.menu}>
-
-          <Image style={styles.cse} source={require('../assets/images/CSE.png')} />
-          <Image style={styles.home} source={require('../assets/Icons/home.png')} />
-          <Image style={styles.shape} source={require('../assets/Icons/shape.png')} /> 
-           </View>   */}
 
           <View style={styles.boxadd}>
-            <View>
-              <Image style={styles.plus} source={require('../assets/Icons/plus.png')} />
-            </View>
             <Text style={{ textAlign: 'left', marginTop: 10, left: 10, color: 'white', fontSize: 17, }}>Add Newbies</Text>
           </View>
-          <View style={styles.boxadd2}>
-            <View>
-              <Image style={styles.plus} source={require('../assets/Icons/list.png')} />
-            </View>
-            <Text style={{ textAlign: 'left', marginTop: 10, left: 10, color: 'black', fontSize: 17, }}>Filttre</Text>
-          </View>
+          
+          <View style={styles.line}></View>
+          <View style={styles.num}></View>
 
           <View style={styles.boxx}>
             <CheckBox
@@ -169,99 +118,9 @@ export default class Profile extends Component {
 
 
 
-           
+
+
          
-        
-
-          <View style={styles.box}>
-            <CheckBox
-              style={styles.checkb}
-              containerStyle={{ backgroundColor: '#FFFFFF', borderColor: '#FFFFFF', marginLeft: 0 }}
-              title='Bergadi Med Aymen'
-              checked={this.state.check}
-              onPress={() => this.setState({ check: !this.state.check })}
-            />
-            <TouchableOpacity style={{ width: 100, height: 70, backgroundColor: 'transparent', position: 'absolute', marginTop: 0, right: 0, }} onPress={() => this.props.navigation.navigate('ProfileDetails')}>
-            <View style={{ width: 10, height: 10, backgroundColor: 'red', position: 'absolute', marginTop: 22, right: 65, }}></View>
-            </TouchableOpacity>
-            <Text style={{ position: 'absolute', marginTop: 18, right: 10, }}>Refused</Text>
-
-          </View>
-          
-          <View style={styles.box}>
-            <CheckBox
-              style={styles.checkb}
-              containerStyle={{ backgroundColor: '#FFFFFF', borderColor: '#FFFFFF', marginLeft: 0 }}
-              title='Nasri Ala eddine'
-              checked={this.state.checke}
-              onPress={() => this.setState({ checke: !this.state.checke })}
-            />
-            <TouchableOpacity style={{ width: 100, height: 70, backgroundColor: 'transparent', position: 'absolute', marginTop: 0, right: 0, }} onPress={() => this.props.navigation.navigate('ProfileDetails')}>
-            <View style={{ width: 10, height: 10, backgroundColor: 'red', position: 'absolute', marginTop: 22, right: 65, }}></View>
-            </TouchableOpacity>
-            <Text style={{ position: 'absolute', marginTop: 18, right: 10, }}>Refused</Text>
-          </View>
-          <View style={styles.box}>
-            <CheckBox
-              style={styles.checkb}
-              containerStyle={{ backgroundColor: '#FFFFFF', borderColor: '#FFFFFF', marginLeft: 0 }}
-              title='Nadir Ouagued'
-              
-              checked={this.state.checkedd}
-              onPress={() => this.setState({ checkedd: !this.state.checkedd })}
-            />
-            <TouchableOpacity style={{ width: 100, height: 70, backgroundColor: 'transparent', position: 'absolute', marginTop: 0, right: 0, }} onPress={() => this.props.navigation.navigate('ProfileDetails')}>
-            <View style={{ width: 10, height: 10, backgroundColor: '#6DD400', position: 'absolute', marginTop: 22, right: 65, }}></View>
-            </TouchableOpacity>
-            <Text style={{ position: 'absolute', marginTop: 18, right: 7, }}>Accepted</Text>
-
-          </View>
-
-          <View style={styles.box}>
-            <CheckBox
-              style={styles.checkb}
-              containerStyle={{ backgroundColor: '#FFFFFF', borderColor: '#FFFFFF', marginLeft: 0 }}
-              title='Lyna Boudchicha'
-              checked={this.state.checkeddd}
-              onPress={() => this.setState({ checkeddd: !this.state.checkeddd })}
-            />
-            <TouchableOpacity style={{ width: 100, height: 70, backgroundColor: 'transparent', position: 'absolute', marginTop: 0, right: 0, }} onPress={() => this.props.navigation.navigate('ProfileDetails')}>
-            <View style={{ width: 10, height: 10, backgroundColor: 'gray', position: 'absolute', marginTop: 22, right: 65, }}></View>
-            </TouchableOpacity>
-            <Text style={{ position: 'absolute', marginTop: 18, right: 10, }}>Pending</Text>
-
-          </View>
-
-          <View style={styles.box}>
-            <CheckBox
-              style={styles.checkb}
-              containerStyle={{ backgroundColor: '#FFFFFF', borderColor: '#FFFFFF', marginLeft: 0 }}
-              title='Nabil Tiaiba'
-              checked={this.state.checkeed}
-              onPress={() => this.setState({ checkeed: !this.state.checkeed })}
-            />
-            <TouchableOpacity style={{ width: 100, height: 70, backgroundColor: 'transparent', position: 'absolute', marginTop: 0, right: 0, }} onPress={() => this.props.navigation.navigate('ProfileDetails')}>
-            <View style={{ width: 10, height: 10, backgroundColor: '#6DD400', position: 'absolute', marginTop: 22, right: 65, }}></View>
-            </TouchableOpacity>
-            <Text style={{ position: 'absolute', marginTop: 18, right: 7, }}>Accepted</Text>
-
-          </View>
-
-          <View style={styles.box}>
-            <CheckBox
-              style={styles.checkb}
-              containerStyle={{ backgroundColor: '#FFFFFF', borderColor: '#FFFFFF', marginLeft: 0 }}
-              title='Ines Abdelaziz'
-              checked={this.state.checked}
-              onPress={() => this.setState({ checked: !this.state.checked })}
-            />
-            <TouchableOpacity style={{ width: 100, height: 70, backgroundColor: 'transparent', position: 'absolute', marginTop: 0, right: 0, }} onPress={() => this.props.navigation.navigate('ProfileDetails')}>
-            <View style={{ width: 10, height: 10, backgroundColor: 'gray', position: 'absolute', marginTop: 22, right: 65, }}></View>
-            </TouchableOpacity>
-            <Text style={{ position: 'absolute', marginTop: 18, right: 10, }}>Pending</Text>
-
-          </View>
-
 
 
         </View>
@@ -284,10 +143,20 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
 
   },
-  menui: {
-    backgroundColor: '#131E30',
-    width: 240,
-    height : 100,
+  line:{
+    width : '100%',
+    height : 2,
+    backgroundColor : '#A6A6A6',
+    marginBottom : -10,
+  },
+  
+  num:{
+    width : 12,
+    height : 12,
+    backgroundColor : '#A6A6A6',
+    alignSelf : 'flex-start',
+    marginLeft : 25,
+
   },
 
   checkb: {
@@ -334,12 +203,10 @@ const styles = StyleSheet.create({
   boxadd: {
     marginTop: 10,
     backgroundColor: '#3D4C64',
-    alignSelf: 'flex-start',
-    marginLeft: 28,
-    width: 180,
-    left: 0,
+    alignSelf: 'center',
+    width: '95%',
     borderRadius: 4,
-    height: 40,
+    height: 80,
     color: '#FFFFFF',
     borderWidth: 1,
     borderColor: '#F3F3F3',

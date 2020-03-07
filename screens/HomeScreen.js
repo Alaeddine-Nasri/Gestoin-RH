@@ -17,12 +17,7 @@ import ProfileCard from '../components/profileCard/ProfileCard';
 export default function HomeScreen() {
   return (
     <View>
-      <SearchBar/>
-      <ScrollView>
         <ProfileCard/>
-        <ProfileCard/>
-        <ProfileCard/>
-      </ScrollView>
     </View>
     
   );
