@@ -87,11 +87,12 @@ export default class Profile extends Component {
       <ScrollView style={styles.container}>
         <View style={styles.header}>
           {/* <Text style={styles.ccch}> Talent Hunter </Text> */}
-        </View>
+       
         <Image style={styles.notification} source={require('../assets/Icons/notification.png')} />
         <TouchableOpacity style={styles.menuicon} onPress={() => this.props.navigation.openDrawer()}>
           <Image style={styles.menuicon} source={require('../assets/Icons/menu.png')} />
         </TouchableOpacity>
+        </View>
         {/* <View style={styles.star} >
           <TouchableOpacity onPress={this.buttonClickListener} style={{width: 24,
             height: 24,
@@ -138,11 +139,13 @@ export default class Profile extends Component {
             <View>
               <Image style={styles.plus} source={require('../assets/Icons/plus.png')} />
             </View>
-            <View>
-              <Image style={styles.plus} source={require('../assets/Icons/plus.png')} />
-            </View>
             <Text style={{ textAlign: 'left', marginTop: 10, left: 10, color: 'white', fontSize: 17, }}>Add Newbies</Text>
-
+          </View>
+          <View style={styles.boxadd2}>
+            <View>
+              <Image style={styles.plus} source={require('../assets/Icons/list.png')} />
+            </View>
+            <Text style={{ textAlign: 'left', marginTop: 10, left: 10, color: 'black', fontSize: 17, }}>Filttre</Text>
           </View>
 
           <View style={styles.boxx}>
@@ -250,6 +253,7 @@ export default class Profile extends Component {
 
 const styles = StyleSheet.create({
   header: {
+    marginTop : 40,
     height: 60,
   },
   menu: {
@@ -316,6 +320,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#F3F3F3',
   },
+  boxadd2: {
+    marginTop: 10,
+    backgroundColor: '#FFFFFF',
+    alignSelf: 'flex-end',
+    marginTop : -40,
+    marginLeft: 28,
+    width: 120,
+    left: -30,
+    borderRadius: 4,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#F3F3F3',
+  },
 
   imageStyle: {
 
@@ -343,7 +360,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     right: 20,
     position: 'absolute',
-    marginTop: 10,
+    marginTop: 20,
     //  marginBottom: 200,
   },
   plus: {
